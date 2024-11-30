@@ -8,7 +8,7 @@
 // This test works by limiting the number of errors (-e=0)
 // and checking that the errors are all at the beginning.
 
-package p
+/*package p
 
 import (
 	"bufio"       // ERROR "imported and not used"
@@ -29,4 +29,4 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
-)
+)*/

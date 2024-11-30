@@ -7,7 +7,7 @@
 // Verify that various erroneous type switches are caught by the compiler.
 // Does not compile.
 
-package main
+/*package main
 
 func notused(x interface{}) {
 	// The first t is in a different scope than the 2nd t; it cannot
@@ -17,4 +17,4 @@ func notused(x interface{}) {
 	case int:
 		_ = t // this is using the t of "t := x.(type)"
 	}
-}
+}*/

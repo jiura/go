@@ -1,4 +1,4 @@
-package p
+/*package p
 
 import (
 	"./a" // ERROR "imported and not used: \x22test/a\x22 as surprise|imported and not used: surprise|\x22test/a\x22 imported as surprise and not used"
@@ -9,4 +9,4 @@ import (
 	"strings" // ERROR "imported and not used: \x22strings\x22|imported and not used: strings|\x22strings\x22 imported and not used"
 )
 
-var _ = fmt.Printf
+var _ = fmt.Printf*/

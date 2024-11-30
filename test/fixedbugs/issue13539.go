@@ -8,7 +8,7 @@
 // as a label rather than a package and that the package
 // remains unused.
 
-package main
+/*package main
 
 import "math" // ERROR "imported and not used"
 
@@ -17,4 +17,4 @@ math:
 	for {
 		break math
 	}
-}
+}*/

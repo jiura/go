@@ -8,4 +8,4 @@
 // errors are caught by the compiler.
 // Does not compile.
 
-package ignored
+//package ignored

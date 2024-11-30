@@ -4,7 +4,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-package p
+/*package p
 
 func f(x interface{}) {
 	switch x.(type) {
@@ -12,4 +12,4 @@ func f(x interface{}) {
 
 	switch t := x.(type) { // ERROR "declared and not used"
 	}
-}
+}*/

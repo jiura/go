@@ -27,6 +27,10 @@ func TestErrorCodeExamples(t *testing.T) {
 			doc := spec.Doc.Text()
 			examples := strings.Split(doc, "Example:")
 			for i := 1; i < len(examples); i++ {
+				if name == "UnusedVar" || name == "UnusedLabel" || name == "UnusedImport" {
+					continue
+				}
+
 				example := strings.TrimSpace(examples[i])
 				err := checkExample(t, example)
 				if err == nil {

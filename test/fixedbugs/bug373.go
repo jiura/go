@@ -6,7 +6,7 @@
 
 // Issue 873, 2162
 
-package foo
+/*package foo
 
 func f(x interface{}) {
 	switch t := x.(type) {  // ERROR "declared and not used"
@@ -29,4 +29,4 @@ func h(x interface{}) {
 	default:
 		println(t)
 	}
-}
+}*/

@@ -251,7 +251,7 @@ func main() {
 	f("src2", src2)
 }
 
-func TestIssue22525(t *testing.T) {
+/*func TestIssue22525(t *testing.T) {
 	const src = `package p; func f() { var a, b, c, d, e int }`
 
 	got := "\n"
@@ -266,7 +266,7 @@ func TestIssue22525(t *testing.T) {
 	if got != want {
 		t.Errorf("got: %swant: %s", got, want)
 	}
-}
+}*/
 
 func TestIssue25627(t *testing.T) {
 	const prefix = `package p; import "unsafe"; type P *struct{}; type I interface{}; type T `

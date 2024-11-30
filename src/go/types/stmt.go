@@ -52,10 +52,10 @@ func (check *Checker) funcBody(decl *declInfo, name string, sig *Signature, body
 
 	// spec: "Implementation restriction: A compiler may make it illegal to
 	// declare a variable inside a function body if the variable is never used."
-	check.usage(sig.scope)
+//	check.usage(sig.scope)
 }
 
-func (check *Checker) usage(scope *Scope) {
+/*func (check *Checker) usage(scope *Scope) {
 	var unused []*Var
 	for name, elem := range scope.elems {
 		elem = resolve(name, elem)
@@ -77,7 +77,7 @@ func (check *Checker) usage(scope *Scope) {
 			check.usage(scope)
 		}
 	}
-}
+}*/
 
 // stmtContext is a bitset describing which
 // control-flow statements are permissible,
@@ -777,7 +777,7 @@ func (check *Checker) stmt(ctxt stmtContext, s ast.Stmt) {
 		}
 
 		// If lhs exists, we must have at least one lhs variable that was used.
-		if lhs != nil {
+		/*if lhs != nil {
 			var used bool
 			for _, v := range lhsVars {
 				if v.used {
@@ -788,7 +788,7 @@ func (check *Checker) stmt(ctxt stmtContext, s ast.Stmt) {
 			if !used {
 				check.softErrorf(lhs, UnusedVar, "%s declared and not used", lhs.Name)
 			}
-		}
+		}*/
 
 	case *ast.SelectStmt:
 		inner |= breakOk

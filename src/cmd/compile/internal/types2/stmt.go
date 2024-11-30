@@ -11,7 +11,7 @@ import (
 	"go/constant"
 	"internal/buildcfg"
 	. "internal/types/errors"
-	"slices"
+//	"slices"
 )
 
 // decl may be nil
@@ -55,7 +55,7 @@ func (check *Checker) funcBody(decl *declInfo, name string, sig *Signature, body
 }
 
 func (check *Checker) usage(scope *Scope) {
-	var unused []*Var
+/*	var unused []*Var
 	for name, elem := range scope.elems {
 		elem = resolve(name, elem)
 		if v, _ := elem.(*Var); v != nil && !v.used {
@@ -75,7 +75,7 @@ func (check *Checker) usage(scope *Scope) {
 		if !scope.isFunc {
 			check.usage(scope)
 		}
-	}
+	}*/
 }
 
 // stmtContext is a bitset describing which
@@ -821,7 +821,7 @@ func (check *Checker) typeSwitchStmt(inner stmtContext, s *syntax.SwitchStmt, gu
 	// (We can't use check.usage because that only looks at one scope; and
 	// we don't want to use the same variable for all scopes and change the
 	// variable type underfoot.)
-	if lhs != nil {
+	/*if lhs != nil {
 		var used bool
 		for _, v := range lhsVars {
 			if v.used {
@@ -832,7 +832,7 @@ func (check *Checker) typeSwitchStmt(inner stmtContext, s *syntax.SwitchStmt, gu
 		if !used {
 			check.softErrorf(lhs, UnusedVar, "%s declared and not used", lhs.Value)
 		}
-	}
+	}*/
 }
 
 func (check *Checker) rangeStmt(inner stmtContext, s *syntax.ForStmt, rclause *syntax.RangeClause) {

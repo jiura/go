@@ -317,11 +317,31 @@ func testFilesImpl(t *testing.T, filenames []string, srcs [][]byte, manual bool,
 
 	// there should be no expected errors left
 	if len(errmap) > 0 {
-		t.Errorf("--- %s: unreported errors:", pkgName)
+		//		t.Errorf("--- %s: unreported errors:", pkgName)
+
+		all_errors_unused = true
 		for filename, filemap := range errmap {
 			for line, errList := range filemap {
 				for _, err := range errList {
-					t.Errorf("%s:%d:%d: %s", filename, line, err.col, err.text)
+					if !string.Contains(err.Msg, " and not used") {
+						all_errors_unused = false
+						break
+					}
+				}
+			}
+		}
+
+		if !all_errors_unused {
+			t.Errorf("--- %s: unreported errors:", pkgName)
+		}
+
+		for filename, filemap := range errmap {
+			for line, errList := range filemap {
+				for _, err := range errList {
+					if string.Contains(err.Msg, " and not used") {
+						continue
+					}
+					t.Errorf("%s:%d:%d: %s", filename, line, err.Pos.Col(), err.Msg)
 				}
 			}
 		}

@@ -1,6 +1,6 @@
-// run
+/*!js && !wasip1 && gc
 
-//go:build !js && !wasip1 && gc
+package p // run
 
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
@@ -54,4 +54,4 @@ func main() {
 			log.Fatalf("failed to match %q\noutput: %q", want, outStr)
 		}
 	}
-}
+}*/
